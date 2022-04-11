@@ -1,0 +1,92 @@
+name: Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  sprint_1:
+    if: ${{github.head_ref == 'sprint_1'}}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - name: Set up GitHub Actions
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Сheck if the repository is private
+      run: exit 1
+      if: ${{github.event.repository.private}}
+    - name: Get testing lib
+      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+    - name: Run tests
+      run: bash tests-second-floor/bin/sprint-1.sh
+      
+  sprint_2:
+    if: ${{github.head_ref == 'sprint_2'}}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - name: Set up GitHub Actions
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Сheck if the repository is private
+      run: exit 1
+      if: ${{github.event.repository.private}}
+    - name: Get testing lib
+      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+    - name: Run tests
+      run: bash tests-second-floor/bin/sprint-2.sh
+      
+  sprint_3:
+    if: ${{github.head_ref == 'sprint_3'}}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - name: Set up GitHub Actions
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Сheck if the repository is private
+      run: exit 1
+      if: ${{github.event.repository.private}}
+    - name: Get testing lib
+      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+    - name: Run tests
+      run: bash tests-second-floor/bin/sprint-3.sh
+      
+  sprint_4:
+    if: ${{github.head_ref == 'sprint_4'}}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - name: Set up GitHub Actions
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Сheck if the repository is private
+      run: exit 1
+      if: ${{github.event.repository.private}}
+    - name: Get testing lib
+      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+    - name: Run tests
+      run: bash tests-second-floor/bin/sprint-4.sh
