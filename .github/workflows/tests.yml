@@ -24,7 +24,7 @@ jobs:
       run: exit 1
       if: ${{github.event.repository.private}}
     - name: Get testing lib
-      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+      run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
     - name: Run tests
       run: bash tests-second-floor/bin/sprint-1.sh
       
@@ -45,7 +45,7 @@ jobs:
       run: exit 1
       if: ${{github.event.repository.private}}
     - name: Get testing lib
-      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+      run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
     - name: Run tests
       run: bash tests-second-floor/bin/sprint-2.sh
       
@@ -66,7 +66,7 @@ jobs:
       run: exit 1
       if: ${{github.event.repository.private}}
     - name: Get testing lib
-      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+      run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
     - name: Run tests
       run: bash tests-second-floor/bin/sprint-3.sh
       
@@ -87,6 +87,6 @@ jobs:
       run: exit 1
       if: ${{github.event.repository.private}}
     - name: Get testing lib
-      run: set -eu && git clone https://github.com/rpill/tests-second-floor.git
+      run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
     - name: Run tests
       run: bash tests-second-floor/bin/sprint-4.sh
